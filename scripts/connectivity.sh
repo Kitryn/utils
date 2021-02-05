@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+echo "Begin internet monitoring"
 while [ true ]
 do
-    if [[ "$(ping -c1 -t2 8.8.8.8 | grep '0 packets received')" != "" ]]; then
-        echo "Internet isn't present"
-        exit 1
-    else
-        echo "Internet is present"
+    if [[ "$(ping -c1 -w2 8.8.8.8 | grep '100% packet loss')" != "" ]]; then
+        echo "Internet isn't present, restarting wifi"
+        nmcli radio wifi off
+        sleep 2
+        nmcli radio wifi on
+        sleep 4
     fi
     sleep 1
 done
