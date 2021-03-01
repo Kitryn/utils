@@ -1,4 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Plug info
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+  \| endif
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
