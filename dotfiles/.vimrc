@@ -88,3 +88,10 @@ function! HasPaste()
     return ''
 endfunction
 
+"""""
+" Keybinds?
+" """
+
+
+imap jj <Esc>
+
