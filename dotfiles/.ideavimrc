@@ -2,12 +2,14 @@ set nu
 set hlsearch "highlight all search occurrences
 set ignorecase "ignore case in search pattern
 set smartcase "no ignore case when pattern is uppercase
-set scrolloff=5 sidescrolloff=10 "Keep some lines before and after the cursor visible
+" set scrolloff=5 sidescrolloff=10 "Keep some lines before and after the cursor visible
 set number relativenumber
 
 imap jj <Esc>
 
 " does this add padding to the left?
 set foldcolumn=1
+
+Plug 'tpope/vim-surround'
 
 
